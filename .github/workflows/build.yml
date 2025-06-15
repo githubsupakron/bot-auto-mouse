@@ -28,8 +28,11 @@ jobs:
         run: |
           pyinstaller --onefile autoMouseFree.py
 
+      - name: List dist folder
+        run: dir dist
+
       - name: Zip EXE file
-        run: Compress-Archive -Path dist\bot.exe -DestinationPath bot-windows.zip
+        run: Compress-Archive -Path dist\autoMouseFree.exe -DestinationPath bot-windows.zip
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
@@ -62,10 +65,10 @@ jobs:
       - name: Zip APP file
         run: |
           cd dist
-          zip -r bot-mac.zip bot
+          zip -r ../bot-mac.zip autoMouseFree
 
       - name: Upload APP artifact
         uses: actions/upload-artifact@v4
         with:
           name: bot-mac
-          path: dist/bot-mac.zip
+          path: bot-mac.zip
