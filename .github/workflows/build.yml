@@ -18,6 +18,9 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Install dependencies
+        run: pip install pynput  # หรือ pip install -r requirements.txt ถ้ามีไฟล์นี้
+
       - name: Install pyinstaller
         run: pip install pyinstaller
 
