@@ -22,7 +22,7 @@ jobs:
       run: |
         pyinstaller --noconsole --onefile autoMouseFree.py
     - name: Upload EXE
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: bot-exe
         path: dist/bot.exe
@@ -43,7 +43,7 @@ jobs:
       run: |
         pyinstaller --windowed --onefile autoMouseFree.py
     - name: Upload APP
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: bot-mac
         path: dist/bot.app
