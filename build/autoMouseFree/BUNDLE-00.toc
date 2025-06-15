@@ -1,3 +1,0 @@
-([('autoMouseFree',
-   '/Users/kulthidac/Documents/BOT_DRACONIA/dist/autoMouseFree',
-   'EXECUTABLE')],)
