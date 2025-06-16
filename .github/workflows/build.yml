@@ -25,7 +25,12 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build Windows EXE
-        run: pyinstaller autoMouseFree.py --onefile --noconsole --name bot
+        run: >
+          pyinstaller autoMouseFree.py --onefile --noconsole --name bot
+          --hidden-import=pyautogui
+          --hidden-import=pynput
+          --hidden-import=numpy
+          --hidden-import=requests
 
       - name: Zip EXE
         run: Compress-Archive -Path dist\bot.exe -DestinationPath bot-windows.zip
@@ -54,7 +59,12 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build macOS APP
-        run: pyinstaller autoMouseFree.py --windowed --name autoMouseFree
+        run: >
+          pyinstaller autoMouseFree.py --windowed --name autoMouseFree
+          --hidden-import=pyautogui
+          --hidden-import=pynput
+          --hidden-import=numpy
+          --hidden-import=requests
 
       - name: Zip macOS App
         run: |
